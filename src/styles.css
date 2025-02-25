@@ -1,0 +1,111 @@
+@import "tailwindcss";
+body {
+    margin: 0;
+    display: flex;
+    place-items: center;
+    min-width: 320px;
+    min-height: 100%;
+    background-color: rgb(246, 250, 255);
+}
+.content-container {
+    height: calc(100vh - 64px); 
+}
+.chat-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+.chatArea {
+    width: 100%;
+    height: calc(100vh - 160px);
+    overflow: auto;
+    padding-top: 10px;
+}
+.chatArea li.repaly {
+    display: block;
+    width: 100%;
+    text-align: right;
+    position: relative;
+    margin-bottom: 7px;
+    padding-right: 10px;
+}
+
+.chatArea li.repaly:before {
+    display: block;
+    clear: both;
+    content: '';
+    position: absolute;
+    bottom: 15px;
+    right: 3px;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 0 12px 15px 12px;
+    border-color: transparent transparent #4b7bec transparent;
+    -webkit-transform: rotate(37deg);
+    -ms-transform: rotate(37deg);
+    transform: rotate(37deg);
+}
+
+.chatArea li.repaly p {
+    color: #fff;
+    font-size: 14px;
+    line-height: 1.5;
+    font-weight: 400;
+    padding: 15px;
+    background: #4b7bec;
+    display: inline-block;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+    margin-bottom: 0;
+}
+
+.chatArea li.repaly p b {
+    display: block;
+    color: #061061;
+    font-size: 14px;
+    line-height: 1.5;
+    font-weight: 500;
+}
+
+.chatArea li.repaly:after {
+    display: block;
+    content: '';
+    clear: both;
+}
+
+.time {
+    display: block;
+    color: #000;
+    font-size: 12px;
+    line-height: 1.5;
+    font-weight: 400;
+}
+
+li.repaly .time {
+    margin-right: 20px;
+}
+
+@media (max-width: 767px) {
+    .content-container {
+        display: flex;
+        flex-direction: column-reverse;
+    }
+    .chat-container {
+        width: 100%;
+    }
+    .chatArea {
+        height: calc(50vh - 158px);
+    } 
+    .mobile-height {
+        height: calc(61vh - 64px);
+        flex-direction: column;
+    }
+    .xs-widths {
+        width: 100%;
+    }
+    .chatArea li.repaly p {
+        padding: 8px 15px;
+    }
+}
